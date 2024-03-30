@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Matches</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+</head>
+
+<body class="d-flex flex-colum vh-100">
+    <main class="container mt-5">
+        <h1 class="mb-3 text-center">All Matches</h1>
+        <% for(let match of matches) { %>
+            <div class="card mb-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=3784&amp;q=80"
+                            class="card-image img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= match.player1 %> vs <%= match.player2 %>
+                            </h5>
+                            <p class="text">
+                                <%= match.points %>
+                            </p>
+                            <a href="matches/<%= match._id %>" class="btn btn-primary">Play Match</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <% } %>
+    </main>
+</body>
+
+</html>
